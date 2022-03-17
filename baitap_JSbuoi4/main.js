@@ -13,39 +13,46 @@
  * Đầu ra: Thông báo kết qủa
  */
 
-var soNguyen1 = 15;
-var soNguyen2 = 52;
-var soNguyen3 = 30;
+document.getElementById("btnKiemTra").onclick = function () {
+  var soNguyen1 = document.getElementById("txtNumber1").value;
+  var soNguyen2 = document.getElementById("txtNumber2").value;
+  var soNguyen3 = document.getElementById("txtNumber3").value;
+  var soLonNhat = " Số Lớn Nhất là số :";
+  var soThuHai = " Số Lớn Hai là số :";
+  var soNhoNhat = " Số Nhỏ Nhất là số :";
 
-if (soNguyen1 < soNguyen2 && soNguyen2 > soNguyen3) {
-  console.log("Số Lớn Nhất là số : " + soNguyen2);
-} else if (soNguyen1 < soNguyen2 && soNguyen2 < soNguyen3) {
-  console.log("Số Thứ Hai là số : " + soNguyen2);
-} else if (soNguyen1 > soNguyen2 && soNguyen2 > soNguyen3) {
-  console.log("Số Thứ Hai là số : " + soNguyen2);
-} else {
-  console.log("Số Nhỏ Nhất là số : " + soNguyen2);
-}
+  if (soNguyen1 < soNguyen2 && soNguyen2 > soNguyen3) {
+    soLonNhat += soNguyen2;
+  } else if (soNguyen1 < soNguyen2 && soNguyen2 < soNguyen3) {
+    soThuHai += soNguyen2;
+  } else if (soNguyen1 > soNguyen2 && soNguyen2 > soNguyen3) {
+    soThuHai += soNguyen2;
+  } else {
+    soNhoNhat += soNguyen2;
+  }
 
-if (soNguyen1 < soNguyen3 && soNguyen2 < soNguyen3) {
-  console.log("Số Lớn Nhất là số : " + soNguyen3);
-} else if (soNguyen1 < soNguyen3 && soNguyen2 > soNguyen3) {
-  console.log("Số Thứ Hai là số : " + soNguyen3);
-} else if (soNguyen1 > soNguyen3 && soNguyen2 < soNguyen3) {
-  console.log("Số Thứ Hai là số : " + soNguyen3);
-} else {
-  console.log("Số Nhỏ Nhất là số : " + soNguyen3);
-}
+  if (soNguyen1 < soNguyen3 && soNguyen2 < soNguyen3) {
+    soLonNhat += soNguyen3;
+  } else if (soNguyen1 < soNguyen3 && soNguyen2 > soNguyen3) {
+    soThuHai += soNguyen3;
+  } else if (soNguyen1 > soNguyen3 && soNguyen2 < soNguyen3) {
+    soThuHai += soNguyen3;
+  } else {
+    soNhoNhat += soNguyen3;
+  }
 
-if (soNguyen1 > soNguyen2 && soNguyen1 > soNguyen3) {
-  console.log("Số Lớn Nhất là số : " + soNguyen1);
-} else if (soNguyen1 > soNguyen2 && soNguyen1 < soNguyen3) {
-  console.log("Số Thứ Hai là số : " + soNguyen1);
-} else if (soNguyen1 < soNguyen2 && soNguyen1 > soNguyen3) {
-  console.log("Số Thứ Hai là số : " + soNguyen1);
-} else {
-  console.log("Số Nhỏ Nhất là số : " + soNguyen1);
-}
+  if (soNguyen1 > soNguyen2 && soNguyen1 > soNguyen3) {
+    soLonNhat += soNguyen1;
+  } else if (soNguyen1 > soNguyen2 && soNguyen1 < soNguyen3) {
+    soThuHai += soNguyen1;
+  } else if (soNguyen1 < soNguyen2 && soNguyen1 > soNguyen3) {
+    soThuHai += soNguyen1;
+  } else {
+    soNhoNhat += soNguyen1;
+  }
+  var ketQua = soNhoNhat + "<br/>" + soThuHai + "<br/>" + soLonNhat;
+  document.getElementById("footerKiemTra").innerHTML = ketQua;
+};
 
 /**
  * Bài Tập 2
@@ -70,21 +77,27 @@ if (soNguyen1 > soNguyen2 && soNguyen1 > soNguyen3) {
  *
  */
 
-var boSuDung = 1;
-var meSuDung = 2;
-var anhSuDung = 3;
-var emSuDung = 4;
-var nguoiSuDung = 2;
+document.getElementById("btnNguoiSuDung").onclick = function () {
+  var nguoiSuDung = document.getElementById("txtDienSo").value;
+  var chaoBo = "Chào Bố, Mời Bố Vào Nhà";
+  var chaoMe = "Chào Mẹ, Mời Mẹ Vào Nhà";
+  var chaoAnh = "Chào Anh, Mời Anh Vào Nhà";
+  var chaoEm = "Chào Em, Mời Em Vào Nhà";
+  var ketQua;
 
-if (nguoiSuDung == 1) {
-  console.log("Chào Bố, Mời Bố Vào Nhà");
-} else if (nguoiSuDung == 2) {
-  console.log("Chào Mẹ, Mời Mẹ Vào Nhà");
-} else if (nguoiSuDung == 3) {
-  console.log("Chào Anh, Mời Anh Vào Nhà");
-} else {
-  console.log("Chào Em, Mời Em Vào Nhà");
-}
+  if (nguoiSuDung.toUpperCase() == "B") {
+    ketQua = chaoBo;
+  } else if (nguoiSuDung.toUpperCase() == "M") {
+    ketQua = chaoMe;
+  } else if (nguoiSuDung.toUpperCase() == "A") {
+    ketQua = chaoAnh;
+  } else if (nguoiSuDung.toUpperCase() == "E") {
+    ketQua = chaoEm;
+  } else {
+    ketQua = "Người Lạ";
+  }
+  document.getElementById("footerKiem").innerHTML = ketQua;
+};
 
 /**
  * Bài Tập 3
@@ -104,46 +117,49 @@ if (nguoiSuDung == 1) {
  *
  * Đầu Ra : báo kết qủa
  */
+document.getElementById("btnKiemTraChanLe").onclick = function () {
+  var soNgauNhien1 = document.getElementById("txtDienSo1").value;
+  var soNgauNhien2 = document.getElementById("txtDienSo2").value;
+  var soNgauNhien3 = document.getElementById("txtDienSo3").value;
 
-var soNgauNhien1 = 14;
-var soNgauNhien2 = 22;
-var soNgauNhien3 = 25;
+  if (soNgauNhien1 % 2 === 0) {
+    var soLe1 = 0;
+    var soChan1 = 0;
+    soChan1 = soChan1 + 1;
+  } else {
+    var soLe1 = 0;
+    var soChan1 = 0;
+    soLe1 = soLe1 + 1;
+  }
 
-if (soNgauNhien1 % 2 === 0) {
-  var soLe1 = 0;
-  var soChan1 = 0;
-  soChan1 = soChan1 + 1;
-} else {
-  var soLe1 = 0;
-  var soChan1 = 0;
-  soLe1 = soLe1 + 1;
-}
+  if (soNgauNhien2 % 2 === 0) {
+    var soLe2 = 0;
+    var soChan2 = 0;
+    soChan2 = soChan2 + 1;
+  } else {
+    var soLe2 = 0;
+    var soChan2 = 0;
+    soLe2 = soLe2 + 1;
+  }
 
-if (soNgauNhien2 % 2 === 0) {
-  var soLe2 = 0;
-  var soChan2 = 0;
-  soChan2 = soChan2 + 1;
-} else {
-  var soLe2 = 0;
-  var soChan2 = 0;
-  soLe2 = soLe2 + 1;
-}
+  if (soNgauNhien3 % 2 === 0) {
+    var soLe3 = 0;
+    var soChan3 = 0;
+    soChan3 = soChan3 + 1;
+  } else {
+    var soLe3 = 0;
+    var soChan3 = 0;
+    soLe3 = soLe3 + 1;
+  }
 
-if (soNgauNhien3 % 2 === 0) {
-  var soLe3 = 0;
-  var soChan3 = 0;
-  soChan3 = soChan3 + 1;
-} else {
-  var soLe3 = 0;
-  var soChan3 = 0;
-  soLe3 = soLe3 + 1;
-}
+  var tongChan = soChan1 + soChan2 + soChan3;
+  var tongLe = soLe1 + soLe2 + soLe3;
+  var ketQuaTongChanLe =
+    "Tổng Số Chẵn Là : " + tongChan + "<br/>" + "Tổng Số Lẻ Là : " + tongLe;
 
-var tongChan = soChan1 + soChan2 + soChan3;
-var tongLe = soLe1 + soLe2 + soLe3;
-
-console.log("Tổng Số Chẵn Là : " + tongChan);
-console.log("Tổng Số Lẻ Là : " + tongLe);
+  document.getElementById("btnKiemTraKetQua").innerHTML = ketQuaTongChanLe;
+  // document.getElementById("btnKiemTraKetQua").innerHTML = ketQuaLe;
+};
 
 /**
  * Bài Tập 4
@@ -161,14 +177,33 @@ console.log("Tổng Số Lẻ Là : " + tongLe);
  * Đầu Ra : thông báo kết quả
  */
 
-var canhA = 4;
-var canhB = 4;
-var canhC = 6;
+document.getElementById("btnTimTamGiac").onclick = function () {
+  var canhA = document.getElementById("txtCanh1").value * 1;
+  var canhB = document.getElementById("txtCanh2").value * 1;
+  var canhC = document.getElementById("txtCanh3").value * 1;
+  var canhA2 = Math.pow(canhA, 2);
+  var canhB2 = Math.pow(canhB, 2);
+  var canhC2 = Math.pow(canhC, 2);
+  var ketQua;
 
-if ((canhA == canhB) == canhC) {
-  console.log("Đây Là Tam Giác Đều");
-} else if ((canhA == canhB) != canhC) {
-  console.log("Đây Là Tam Giác cân");
-} else {
-  console.log("Đây Là Tam Giác Thường");
-}
+  if (canhA == canhB && canhA == canhC) {
+    ketQua = "Đây Là Tam Giác Đều";
+  } else if (canhA == canhB && canhA != canhC) {
+    ketQua = "Đây Là Tam Giác cân";
+  } else if (canhA != canhB && canhA == canhC) {
+    ketQua = "Đây Là Tam Giác cân";
+  } else if (canhA == canhC && canhC != canhB) {
+    ketQua = "Đây Là Tam Giác cân";
+  } else if (canhB == canhC && canhC != canhA) {
+    ketQua = "Đây Là Tam Giác cân";
+  } else if (
+    canhA2 == canhB2 + canhC2 ||
+    canhC2 == canhB2 + canhA2 ||
+    canhB2 == canhA2 + canhC2
+  ) {
+    ketQua = "Đây Là Tam Giác Vuông";
+  } else {
+    ketQua = "Đây Là Tam Giác Thường";
+  }
+  document.getElementById("btnLoaiTamGiac").innerHTML = ketQua;
+};
